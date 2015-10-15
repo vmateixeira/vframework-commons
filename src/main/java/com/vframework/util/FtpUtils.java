@@ -77,6 +77,8 @@ public class FtpUtils {
 		Properties properties = System.getProperties();
 		
 		try {
+			checkConnection(ftpClient);
+			
 			int replyCode = ftpClient.cwd((directoryPath != null && !directoryPath.isEmpty()) ? directoryPath : properties.getProperty("ftp.Main-Working-Directory"));
 			LOGGER.debug("Change directory reply code: {}", replyCode);
 			
@@ -94,6 +96,8 @@ public class FtpUtils {
 	 */
 	public static void makeDirectory(FTPClient ftpClient, String directoryPath) throws FrameworkException {
 		try {
+			checkConnection(ftpClient);
+			
 			int replyCode = ftpClient.mkd(directoryPath);
 			LOGGER.debug("Make new directory reply code: {}", replyCode);
 			
@@ -113,6 +117,8 @@ public class FtpUtils {
 		String workDir = null;
 		
 		try {
+			checkConnection(ftpClient);
+			
 			int replyCode = ftpClient.pwd();
 			LOGGER.debug("Print working directory reply code: {}", replyCode);
 			
@@ -153,6 +159,8 @@ public class FtpUtils {
 	 */
 	public static void storeFile(FTPClient ftpClient, String fileName, InputStream inputStream) throws FrameworkException {
 		try {
+			checkConnection(ftpClient);
+			
 			if(ftpClient.storeFile(fileName, inputStream)) {
 				LOGGER.debug("Store file reply code: {}", ftpClient.getReplyCode());
 			} else {
@@ -172,6 +180,8 @@ public class FtpUtils {
 		FTPFile[] filesList = null;
 		
 		try {
+			checkConnection(ftpClient);
+			
 			filesList = ftpClient.listFiles();
 			
 			if(null != filesList) {
@@ -217,6 +227,8 @@ public class FtpUtils {
 		File file = new File(localFilePath);
 		
 		try {
+			checkConnection(ftpClient);
+			
 			if(ftpClient.retrieveFile(remoteFileName, new FileOutputStream(file))) {
 				LOGGER.debug("Retrieve file reply code: {}", ftpClient.getReplyCode());
 			} else {
@@ -234,6 +246,8 @@ public class FtpUtils {
 	 */
 	public static void disconnect(FTPClient ftpClient) throws FrameworkException {
 		try {
+			checkConnection(ftpClient);
+			
 			if(ftpClient.logout()) {
 				LOGGER.debug("Logout reply code: {}", ftpClient.getReplyCode());
 			} else {
@@ -243,6 +257,19 @@ public class FtpUtils {
 			ftpClient.disconnect();
 		} catch (IOException ioException) {
 			LOGGER.error("Error disconnecting from FTP server", ioException);
+		}
+	}
+	
+	/**
+	 * Checks if client is connected to an FTP server
+	 * @throws FrameworkException
+	 */
+	public static void checkConnection(FTPClient ftpClient) throws FrameworkException {
+		if(ftpClient.isConnected()) {
+			LOGGER.debug("Is connected reply code: {}", ftpClient.getReplyCode());
+		} else {
+			LOGGER.debug("Is connected reply code: {}", ftpClient.getReplyCode());
+			throw new FrameworkException("Client is not connected to an FTP server {}", ftpClient.getReplyString());
 		}
 	}
 	
