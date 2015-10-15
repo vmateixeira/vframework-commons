@@ -13,3 +13,5 @@ hs_err_pid*
 
 # User configured
 /target/
+/src/test/resources/db/
+/src/test/resources/log/
