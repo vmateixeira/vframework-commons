@@ -1,4 +1,4 @@
-package com.vframework.util;
+package com.vframework.commons.util;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -13,7 +13,9 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.vframework.exception.FrameworkException;
+import com.vframework.commons.exception.FrameworkException;
+import com.vframework.commons.util.FtpUtils;
+import com.vframework.commons.util.PropertiesUtils;
 
 public class FtpUtilsTest {
 	

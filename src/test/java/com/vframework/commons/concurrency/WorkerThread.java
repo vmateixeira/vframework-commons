@@ -1,4 +1,4 @@
-package com.vframework.concurrency;
+package com.vframework.commons.concurrency;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

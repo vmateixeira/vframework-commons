@@ -1,4 +1,4 @@
-package com.vframework.util;
+package com.vframework.commons.util;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -17,7 +17,7 @@ import org.apache.commons.net.ftp.FTPReply;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.vframework.exception.FrameworkException;
+import com.vframework.commons.exception.FrameworkException;
 
 public class FtpUtils {
 	

@@ -1,10 +1,12 @@
-package com.vframework.jdbc;
+package com.vframework.commons.jdbc;
 
 import static org.junit.Assert.assertNotNull;
 
 import java.sql.Connection;
 
 import org.junit.Test;
+
+import com.vframework.commons.jdbc.SQLiteJDBC;
 
 public class SQLiteJDBCTest {
 	

@@ -1,4 +1,4 @@
-package com.vframework.util;
+package com.vframework.commons.util;
 
 import java.io.OutputStream;
 import java.net.URL;

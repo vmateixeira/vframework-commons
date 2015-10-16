@@ -1,4 +1,4 @@
-package com.vframework.jdbc;
+package com.vframework.commons.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

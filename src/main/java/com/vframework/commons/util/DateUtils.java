@@ -1,4 +1,4 @@
-package com.vframework.util;
+package com.vframework.commons.util;
 
 import java.sql.Timestamp;
 import java.text.ParseException;
@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-import com.vframework.exception.FrameworkException;
+import com.vframework.commons.exception.FrameworkException;
 
 public class DateUtils {
 	public static String yyyyMdd_HHmmss = "yyyy-M-dd HH:mm:ss";

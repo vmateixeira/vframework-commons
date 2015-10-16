@@ -1,4 +1,4 @@
-package com.vframework.util;
+package com.vframework.commons.util;
 
 import java.io.File;
 import java.io.FileReader;

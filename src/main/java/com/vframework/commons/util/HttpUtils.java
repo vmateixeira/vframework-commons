@@ -1,4 +1,4 @@
-package com.vframework.util;
+package com.vframework.commons.util;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -12,7 +12,7 @@ import java.util.Properties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.vframework.exception.FrameworkException;
+import com.vframework.commons.exception.FrameworkException;
 
 public class HttpUtils {
 	private static final Logger LOGGER = LoggerFactory.getLogger(HttpUtils.class);

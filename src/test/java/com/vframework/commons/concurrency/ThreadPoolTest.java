@@ -1,4 +1,4 @@
-package com.vframework.concurrency;
+package com.vframework.commons.concurrency;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -6,7 +6,9 @@ import java.util.Deque;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.vframework.util.PropertiesUtils;
+import com.vframework.commons.concurrency.ThreadPool;
+import com.vframework.commons.concurrency.ThreadPoolType;
+import com.vframework.commons.util.PropertiesUtils;
 
 public class ThreadPoolTest {
 	

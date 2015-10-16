@@ -1,4 +1,4 @@
-package com.vframework.concurrency;
+package com.vframework.commons.concurrency;
 
 public enum ThreadPoolType {
 	CACHED,
